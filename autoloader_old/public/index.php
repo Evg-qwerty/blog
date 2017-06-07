@@ -1,6 +1,6 @@
 <?php
 
-function __autoload($className) {
+function autoloadClasses($className) {
 
 	$classPieces = explode('\\', $className);
 
@@ -13,6 +13,8 @@ function __autoload($className) {
 			break;
 	}
 }
+
+spl_autoload_register('autoloadClasses');
 
 $sum = new app\One();
 $min = new app2\Two();
